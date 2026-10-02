@@ -1,0 +1,745 @@
+{
+  "users": [
+    {
+      "id": "STU1001",
+      "name": "Aryan Verma",
+      "email": "stu1001@campuscare.edu",
+      "role": "STUDENT",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 98231 44550",
+      "passwordHash": "$2b$10$UDaCjgjtCC118w8GnHyNdeI4oblRkBUgu96sWS3pmpPT5Qhmkc2.y",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T11:15:25.645Z",
+      "mustChangePassword": false
+    },
+    {
+      "id": "FAC1001",
+      "name": "Dr. Ananya Sen",
+      "email": "fac1001@campuscare.edu",
+      "role": "FACULTY",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 98450 77123",
+      "passwordHash": "$2b$10$HPVNG2AiRyPXIY6NhaDQFeo9y169JOPrNSnn7Y2RLm7BSHX8XVSo6",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T11:20:19.053Z",
+      "mustChangePassword": false
+    },
+    {
+      "id": "HOD1001",
+      "name": "Dr. S. Radhakrishnan",
+      "email": "hod1001@campuscare.edu",
+      "role": "HOD",
+      "department": "Campus Operations & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 94440 12000",
+      "passwordHash": "$2b$10$wNlGMuk8Esqtl1yZRKpgd.iL8UEdjVd51FSek6HPIwClLS243WpQ.",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T11:22:23.253Z",
+      "mustChangePassword": false
+    },
+    {
+      "id": "STU-2024-101",
+      "name": "Aryan Verma",
+      "email": "aryan.verma@campuscare.edu",
+      "role": "STUDENT",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 98231 44550",
+      "passwordHash": "$2b$10$tzUuD3xv94icBoHmqPboxe2G73b6Jko5fRZngL097KodjshH/yF9W",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T10:25:08.772Z",
+      "mustChangePassword": true
+    },
+    {
+      "id": "STU-2024-102",
+      "name": "Priya Nair",
+      "email": "priya.nair@campuscare.edu",
+      "role": "STUDENT",
+      "department": "Electronics & Communication",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 97455 12890",
+      "passwordHash": "$2b$10$sWTCwA6y0eIj9Xmkicgs7e3cqqu4eQRROaD0Jh4tVUoiJXUqdjPPi",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T10:25:08.772Z",
+      "mustChangePassword": true
+    },
+    {
+      "id": "FAC-CS-204",
+      "name": "Dr. Ananya Sen",
+      "email": "ananya.sen@campuscare.edu",
+      "role": "FACULTY",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 98450 77123",
+      "passwordHash": "$2b$10$d.gUd.tOfsLG8jAwADBdheHNQIFDfXhPOXU/hUjXiXv1q.eHmFBdq",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T10:25:08.772Z",
+      "mustChangePassword": true
+    },
+    {
+      "id": "FAC-ME-108",
+      "name": "Prof. Ramesh Kulkarni",
+      "email": "ramesh.kulkarni@campuscare.edu",
+      "role": "FACULTY",
+      "department": "Mechanical Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 94220 88910",
+      "passwordHash": "$2b$10$2pAvcJtBJXMz6mGeWu3bseppLu.KJYduC5im.HOsc2.y1gWl454EO",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T10:25:08.772Z",
+      "mustChangePassword": true
+    },
+    {
+      "id": "HOD-ENG-001",
+      "name": "Dr. S. Radhakrishnan",
+      "email": "hod.engineering@campuscare.edu",
+      "role": "HOD",
+      "department": "Campus Operations & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "phone": "+91 94440 12000",
+      "passwordHash": "$2b$10$Gka8FbjtYAly1a9vCatIc.KR9db86cp2gcMPiRDu0QEzEbG1cRibK",
+      "isActive": true,
+      "createdAt": "2026-10-02T10:25:08.772Z",
+      "updatedAt": "2026-10-02T10:25:08.772Z",
+      "mustChangePassword": true
+    }
+  ],
+  "students": [
+    {
+      "userId": "STU1001",
+      "studentId": "STU1001",
+      "department": "Computer Science & Engineering",
+      "semester": "6th Semester",
+      "batch": "2023-2027",
+      "hostelBlock": "Bhabha Hostel (Block A)",
+      "roomNo": "A-314"
+    },
+    {
+      "userId": "STU-2024-101",
+      "studentId": "STU-2024-101",
+      "department": "Computer Science & Engineering",
+      "semester": "6th Semester",
+      "batch": "2023-2027",
+      "hostelBlock": "Bhabha Hostel (Block A)",
+      "roomNo": "A-314"
+    },
+    {
+      "userId": "STU-2024-102",
+      "studentId": "STU-2024-102",
+      "department": "Electronics & Communication",
+      "semester": "4th Semester",
+      "batch": "2024-2028",
+      "hostelBlock": "Kalpana Chawla Hall",
+      "roomNo": "K-208"
+    }
+  ],
+  "faculty": [
+    {
+      "userId": "FAC1001",
+      "facultyId": "FAC1001",
+      "department": "Computer Science & Engineering",
+      "designation": "Associate Professor",
+      "cabinNo": "Faculty Block 2, Cabin 210"
+    },
+    {
+      "userId": "FAC-CS-204",
+      "facultyId": "FAC-CS-204",
+      "department": "Computer Science & Engineering",
+      "designation": "Associate Professor",
+      "cabinNo": "Faculty Block 2, Cabin 210"
+    },
+    {
+      "userId": "FAC-MECH-301",
+      "facultyId": "FAC-MECH-301",
+      "department": "Mechanical Engineering",
+      "designation": "Professor & Workshop Head",
+      "cabinNo": "Mechanical Block, Room 104"
+    }
+  ],
+  "hod": [
+    {
+      "userId": "HOD1001",
+      "hodId": "HOD1001",
+      "department": "Campus Operations & Engineering",
+      "officeLocation": "Admin Tower, Room 102"
+    },
+    {
+      "userId": "HOD-ENG-001",
+      "hodId": "HOD-ENG-001",
+      "department": "Campus Operations & Engineering",
+      "officeLocation": "Admin Tower, Room 102"
+    }
+  ],
+  "complaints": [
+    {
+      "complaintId": "CC-2026-0008",
+      "studentId": "STU1001",
+      "studentName": "Aryan Verma",
+      "title": "Electrical issue at 2nd FLOOR (3RD ROOM)",
+      "category": "Electrical",
+      "description": "PLEASE CHECK OUR CLASS ROOM BENCH SIR",
+      "department": "Computer Science & Engineering",
+      "location": "2nd FLOOR",
+      "classroomLab": "3RD ROOM",
+      "priority": "Medium",
+      "photoUrl": "/api/files/complaints/complaint-1790940525388-bb2c2b8cb80f.jpg",
+      "photoCaption": "images.jfif",
+      "status": "Resolved",
+      "createdAt": "2026-10-02T11:28:45.388Z",
+      "updatedAt": "2026-10-02T11:31:55.365Z",
+      "hodRemarks": "completed",
+      "resolutionSummary": "completed",
+      "resolvedAt": "2026-10-02T11:31:55.365Z"
+    },
+    {
+      "complaintId": "CC-2026-0001",
+      "studentId": "STU1001",
+      "studentName": "Aryan Verma",
+      "title": "Short circuit & sparking in ceiling fan switchboard",
+      "category": "Electrical",
+      "description": "During the morning lecture, the master switch on the wall sparked continuously when toggling fan #3. There is a strong burning smell. The classroom had to be vacated temporarily.",
+      "department": "Computer Science & Engineering",
+      "location": "Aryabhata Academic Block, 3rd Floor",
+      "classroomLab": "Lecture Hall 304",
+      "priority": "Critical",
+      "photoUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Burnt switch socket plate and singed wire casing",
+      "status": "In Progress",
+      "assignedTo": "Kumar Rajan",
+      "assignedTeam": "Electrical Maintenance Wing",
+      "targetResolutionDate": "2026-10-01T17:00:00.000Z",
+      "hodRemarks": "Urgent electrical hazard. Breaker #14 tripped as safety precaution. Kumar Rajan deployed with heavy-duty switchboard replacement kit.",
+      "createdAt": "2026-09-30T09:40:00.000Z",
+      "updatedAt": "2026-09-30T10:15:00.000Z"
+    },
+    {
+      "complaintId": "CC-2026-0003",
+      "studentId": "STU-2024-102",
+      "studentName": "Priya Nair",
+      "title": "Severe pipeline leakage in 2nd Floor washroom",
+      "category": "Water",
+      "description": "The main water inlet valve beneath the central sink is ruptured. Water is overflowing into the corridor creating slippery hazards right near the stairs.",
+      "department": "Electronics & Communication",
+      "location": "Visvesvaraya Engineering Complex, Wing B",
+      "classroomLab": "2nd Floor Restroom (Near Staircase 2)",
+      "priority": "High",
+      "photoUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Leakage around base piping and floor standing water",
+      "status": "Resolved",
+      "assignedTo": "Santosh Mehra",
+      "assignedTeam": "Water Supply & Plumbing Cell",
+      "targetResolutionDate": "2026-09-29T14:00:00.000Z",
+      "hodRemarks": "Main pipeline valve replaced and floor sanitized. Dry blower used on hallway floor.",
+      "resolutionSummary": "Fitted heavy duty 1-inch brass ball valve and replaced deteriorated seal ring. Water pressure normalized.",
+      "resolvedAt": "2026-09-29T13:45:00.000Z",
+      "createdAt": "2026-09-29T10:20:00.000Z",
+      "updatedAt": "2026-09-29T13:45:00.000Z"
+    },
+    {
+      "complaintId": "CC-2026-0004",
+      "studentId": "STU1001",
+      "studentName": "Aryan Verma",
+      "title": "Wi-Fi access point offline in Central Computing Laboratory",
+      "category": "Internet",
+      "description": "Cisco AP-08 in Lab 4 has had amber flashing light since morning. More than 40 desktop terminals cannot access the departmental git repository and online compiler servers.",
+      "department": "Computer Science & Engineering",
+      "location": "Computer Center, Ground Floor",
+      "classroomLab": "Computer Lab 4 (Networks & Cloud)",
+      "priority": "Critical",
+      "photoUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Access Point status LED in error amber flashing mode",
+      "status": "Pending",
+      "createdAt": "2026-10-01T09:10:00.000Z",
+      "updatedAt": "2026-10-01T09:10:00.000Z"
+    },
+    {
+      "complaintId": "CC-2026-0006",
+      "studentId": "STU-2024-102",
+      "studentName": "Priya Nair",
+      "title": "Irregular waste disposal and uncleaned bins near Library quadrangle",
+      "category": "Cleaning",
+      "description": "Recycling and wet waste receptacles outside the main entrance of Central Library have been overflowing for 36 hours. Stray animals gather and bad odors disrupt quiet reading zones.",
+      "department": "Electronics & Communication",
+      "location": "Central Library Perimeter & Reading Garden",
+      "classroomLab": "North Reading Garden Steps",
+      "priority": "Medium",
+      "photoUrl": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Overflowing bins near library entrance pathway",
+      "status": "Pending",
+      "createdAt": "2026-10-01T07:15:00.000Z",
+      "updatedAt": "2026-10-01T07:15:00.000Z"
+    },
+    {
+      "complaintId": "CC-2026-0007",
+      "studentId": "STU1001",
+      "studentName": "Aryan Verma",
+      "title": "Broken safety railing on 3rd floor open balcony bridge",
+      "category": "Safety",
+      "description": "The stainless steel railing section connecting the Academic Block and Innovation Center is dislodged from the concrete anchor bolt. Severe fall risk for walking students.",
+      "department": "Computer Science & Engineering",
+      "location": "Inter-Departmental Skywalk, 3rd Floor",
+      "classroomLab": "Skywalk Bridge connecting Block A & B",
+      "priority": "Critical",
+      "photoUrl": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Loose anchor bolt and unstable balustrade post",
+      "status": "In Progress",
+      "assignedTo": "Gopal Krishnan",
+      "assignedTeam": "Civil & Structural Maintenance",
+      "targetResolutionDate": "2026-10-01T18:00:00.000Z",
+      "hodRemarks": "Temporary warning barricades installed immediately. Civil team epoxy-welding anchor base this afternoon.",
+      "createdAt": "2026-09-30T15:20:00.000Z",
+      "updatedAt": "2026-09-30T16:00:00.000Z"
+    }
+  ],
+  "facultyReports": [
+    {
+      "reportId": "CC-2026-0002",
+      "facultyId": "FAC-CS-204",
+      "facultyName": "Dr. Ananya Sen",
+      "title": "Overhead projector display bulb failed before Mid-term Review",
+      "category": "Classroom",
+      "description": "The ceiling-mounted Epson projector in Advanced Seminar Room 2 has red lamp indicator blinking and produces no projection. We have scheduled viva presentations starting tomorrow morning for 65 students.",
+      "department": "Computer Science & Engineering",
+      "location": "Sir C.V. Raman Science Wing, 2nd Floor",
+      "classroomLab": "Seminar Hall 202",
+      "priority": "High",
+      "photoUrl": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "Projector red lamp warning light blinking",
+      "courseOrClassAffected": "Distributed Systems Viva & Project Review",
+      "estimatedAffectedStudents": 65,
+      "status": "Assigned",
+      "assignedTo": "Vikram Mehta",
+      "assignedTeam": "Campus Wi-Fi & IT Networks",
+      "targetResolutionDate": "2026-10-01T15:00:00.000Z",
+      "hodRemarks": "IT AV technician requested to install replacement projector lamp or deploy temporary mobile projector trolley.",
+      "createdAt": "2026-10-01T08:05:00.000Z",
+      "updatedAt": "2026-10-01T08:30:00.000Z"
+    },
+    {
+      "reportId": "CC-2026-0005",
+      "facultyId": "FAC-ME-108",
+      "facultyName": "Prof. Ramesh Kulkarni",
+      "title": "Exhaust & fume extraction failure in CAD/CAM Workshop",
+      "category": "Laboratory",
+      "description": "The industrial air blower unit connected to the CNC cutting machines and laser engraver is making a grinding noise and failing to exhaust fumes. Unsafe for student practical batch.",
+      "department": "Mechanical Engineering",
+      "location": "Mechanical Engineering Workshop Complex",
+      "classroomLab": "CAD/CAM Lab & CNC Room",
+      "priority": "Critical",
+      "photoUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "photoCaption": "CNC exhaust duct connector bearing jammed",
+      "courseOrClassAffected": "B.Tech Mech 5th Sem - CNC Machining Practical",
+      "estimatedAffectedStudents": 45,
+      "status": "Assigned",
+      "assignedTo": "Gopal Krishnan",
+      "assignedTeam": "Civil & Structural Maintenance",
+      "targetResolutionDate": "2026-10-02T12:00:00.000Z",
+      "hodRemarks": "Blower belt tensioner replacement ordered from local distributor. Workshop classes temporarily shifted to Room M-10.",
+      "createdAt": "2026-09-30T13:50:00.000Z",
+      "updatedAt": "2026-09-30T14:20:00.000Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "MSG-001",
+      "senderId": "STU-2024-101",
+      "senderName": "Aryan Verma",
+      "senderRole": "STUDENT",
+      "receiverId": "HOD-ENG-001",
+      "receiverName": "Dr. S. Radhakrishnan",
+      "receiverRole": "HOD",
+      "message": "Respected Sir, we have isolated the circuit breaker for Room 304 switchboard. Could Kumar Rajan inspect before 2 PM as we have an afternoon test scheduled?",
+      "complaintId": "CC-2026-0001",
+      "createdAt": "2026-09-30T10:45:00.000Z",
+      "readAt": "2026-09-30T10:45:00.000Z",
+      "isRead": true
+    },
+    {
+      "id": "MSG-002",
+      "senderId": "HOD-ENG-001",
+      "senderName": "Dr. S. Radhakrishnan",
+      "senderRole": "HOD",
+      "receiverId": "STU-2024-101",
+      "receiverName": "Aryan Verma",
+      "receiverRole": "STUDENT",
+      "message": "Aryan, thanks for your alert. Electrician Kumar is currently en route with safety gear. I have instructed academic office to shift the 2 PM test to Hall 308 as a buffer.",
+      "complaintId": "CC-2026-0001",
+      "createdAt": "2026-09-30T11:02:00.000Z",
+      "readAt": "2026-09-30T11:02:00.000Z",
+      "isRead": true
+    },
+    {
+      "id": "MSG-003",
+      "senderId": "FAC-CS-204",
+      "senderName": "Dr. Ananya Sen",
+      "senderRole": "FACULTY",
+      "receiverId": "HOD-ENG-001",
+      "receiverName": "Dr. S. Radhakrishnan",
+      "receiverRole": "HOD",
+      "message": "Dr. Radhakrishnan, following up on CC-2026-0002. Is the replacement projector lamp in campus stock or do we need the portable AV trolley for tomorrow 9 AM?",
+      "complaintId": "CC-2026-0002",
+      "createdAt": "2026-10-01T08:45:00.000Z",
+      "readAt": "2026-10-01T08:45:00.000Z",
+      "isRead": true
+    },
+    {
+      "id": "MSG-004",
+      "senderId": "HOD-ENG-001",
+      "senderName": "Dr. S. Radhakrishnan",
+      "senderRole": "HOD",
+      "receiverId": "FAC-CS-204",
+      "receiverName": "Dr. Ananya Sen",
+      "receiverRole": "FACULTY",
+      "message": "Good morning Dr. Sen. Stock has 2 lamps; Vikram Mehta is testing them right now. If it takes longer, the AV trolley in Room 101 will be pre-positioned by 8:30 AM.",
+      "complaintId": "CC-2026-0002",
+      "createdAt": "2026-10-01T09:00:00.000Z",
+      "isRead": false
+    },
+    {
+      "id": "MSG-005",
+      "senderId": "STU-2024-102",
+      "senderName": "Priya Nair",
+      "senderRole": "STUDENT",
+      "receiverId": "HOD-ENG-001",
+      "receiverName": "Dr. S. Radhakrishnan",
+      "receiverRole": "HOD",
+      "message": "Thank you Sir! The plumbing team fixed the leakage very swiftly. The corridor is completely dry now.",
+      "complaintId": "CC-2026-0003",
+      "createdAt": "2026-09-29T14:10:00.000Z",
+      "readAt": "2026-09-29T14:10:00.000Z",
+      "isRead": true
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NOTIF-1790940715366",
+      "userId": "HOD-ENG-001",
+      "type": "status_update",
+      "title": "Status Update",
+      "message": "CC-2026-0008 status updated to \"Resolved\" (completed).",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:31:55.366Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-1790940715365",
+      "userId": "STU1001",
+      "type": "resolved",
+      "title": "Complaint Resolved",
+      "message": "Your complaint CC-2026-0008 has been marked as Resolved. Resolution: completed",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:31:55.365Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-1790940638543",
+      "userId": "HOD-ENG-001",
+      "type": "status_update",
+      "title": "Status Update",
+      "message": "CC-2026-0008 status updated to \"In Progress\".",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:30:38.543Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-1790940638543",
+      "userId": "STU1001",
+      "type": "work_started",
+      "title": "Work Started",
+      "message": "Work has started on your complaint CC-2026-0008. Maintenance crew is actively resolving the issue.",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:30:38.543Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-1790940525389",
+      "userId": "HOD-ENG-001",
+      "type": "new_complaint",
+      "title": "New Student Complaint",
+      "message": "Aryan Verma reported Electrical issue in 3RD ROOM (CC-2026-0008)",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:28:45.389Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-1790940525389",
+      "userId": "STU1001",
+      "type": "complaint_received",
+      "title": "Complaint Received",
+      "message": "Your complaint CC-2026-0008 has been successfully registered and queued for HOD review.",
+      "complaintId": "CC-2026-0008",
+      "createdAt": "2026-10-02T11:28:45.389Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-001",
+      "userId": "STU-2024-101",
+      "type": "assignment",
+      "title": "Complaint Assigned",
+      "message": "Your complaint CC-2026-0001 (Short circuit in switchboard) has been assigned to Electrical Maintenance Wing.",
+      "complaintId": "CC-2026-0001",
+      "createdAt": "2026-09-30T10:15:00.000Z",
+      "readAt": "2026-09-30T10:15:00.000Z",
+      "isRead": true
+    },
+    {
+      "id": "NOTIF-002",
+      "userId": "STU-2024-101",
+      "type": "message",
+      "title": "New Message from HOD",
+      "message": "Dr. S. Radhakrishnan replied regarding Room 304 switchboard.",
+      "complaintId": "CC-2026-0001",
+      "createdAt": "2026-09-30T11:02:00.000Z",
+      "readAt": "2026-09-30T11:02:00.000Z",
+      "isRead": true
+    },
+    {
+      "id": "NOTIF-003",
+      "userId": "FAC-CS-204",
+      "type": "assignment",
+      "title": "Technician Dispatched",
+      "message": "Your report CC-2026-0002 has been assigned to IT Networks & AV Cell.",
+      "complaintId": "CC-2026-0002",
+      "createdAt": "2026-10-01T08:30:00.000Z",
+      "isRead": true,
+      "readAt": "2026-10-02T11:33:47.310Z"
+    },
+    {
+      "id": "NOTIF-004",
+      "userId": "HOD-ENG-001",
+      "type": "alert",
+      "title": "New High Priority Issue",
+      "message": "STU-2024-101 reported Critical Wi-Fi AP downtime in Computer Lab 4.",
+      "complaintId": "CC-2026-0004",
+      "createdAt": "2026-10-01T09:10:00.000Z",
+      "isRead": false
+    },
+    {
+      "id": "NOTIF-005",
+      "userId": "STU-2024-102",
+      "type": "status_change",
+      "title": "Complaint Resolved",
+      "message": "CC-2026-0003 (Washroom pipeline leakage) has been verified and resolved.",
+      "complaintId": "CC-2026-0003",
+      "createdAt": "2026-09-29T13:45:00.000Z",
+      "readAt": "2026-09-29T13:45:00.000Z",
+      "isRead": true
+    }
+  ],
+  "complaintHistory": [
+    {
+      "id": "LOG-001",
+      "complaintId": "CC-2026-0001",
+      "action": "Report Submitted",
+      "remark": "Priority marked as Critical due to visible sparks and smoke smell.",
+      "updatedBy": "Aryan Verma",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-09-30T09:40:00.000Z"
+    },
+    {
+      "id": "LOG-002",
+      "complaintId": "CC-2026-0001",
+      "action": "Reviewed by HOD",
+      "remark": "Identified as urgent classroom hazard. Approved priority override.",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-30T10:05:00.000Z"
+    },
+    {
+      "id": "LOG-003",
+      "complaintId": "CC-2026-0001",
+      "action": "Assigned to Electrical Maintenance Wing",
+      "remark": "Assigned to Senior Electrician Kumar Rajan.",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-30T10:15:00.000Z"
+    },
+    {
+      "id": "LOG-006",
+      "complaintId": "CC-2026-0003",
+      "action": "Report Submitted",
+      "updatedBy": "Priya Nair",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-09-29T10:20:00.000Z"
+    },
+    {
+      "id": "LOG-007",
+      "complaintId": "CC-2026-0003",
+      "action": "Assigned to Plumbing Cell",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-29T11:00:00.000Z"
+    },
+    {
+      "id": "LOG-008",
+      "complaintId": "CC-2026-0003",
+      "action": "Marked Resolved",
+      "remark": "Sanitation inspection confirmed dry corridor and tested valve.",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-29T13:45:00.000Z"
+    },
+    {
+      "id": "LOG-009",
+      "complaintId": "CC-2026-0004",
+      "action": "Report Submitted",
+      "remark": "Flagged with Critical priority due to impending lab exams.",
+      "updatedBy": "Aryan Verma",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-10-01T09:10:00.000Z"
+    },
+    {
+      "id": "LOG-012",
+      "complaintId": "CC-2026-0006",
+      "action": "Report Submitted",
+      "updatedBy": "Priya Nair",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-10-01T07:15:00.000Z"
+    },
+    {
+      "id": "LOG-013",
+      "complaintId": "CC-2026-0007",
+      "action": "Report Submitted",
+      "updatedBy": "Aryan Verma",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-09-30T15:20:00.000Z"
+    },
+    {
+      "id": "LOG-014",
+      "complaintId": "CC-2026-0007",
+      "action": "Assigned to Civil Team with Red Barricade protocol",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-30T16:00:00.000Z"
+    },
+    {
+      "id": "LOG-1790940525389-init",
+      "complaintId": "CC-2026-0008",
+      "action": "Complaint Registered",
+      "newStatus": "Pending",
+      "remark": "Complaint submitted with priority Medium. Location: 2nd FLOOR (3RD ROOM)",
+      "updatedBy": "Aryan Verma",
+      "actorRole": "STUDENT",
+      "createdAt": "2026-10-02T11:28:45.389Z"
+    },
+    {
+      "id": "LOG-1790940638543",
+      "complaintId": "CC-2026-0008",
+      "action": "Status changed to In Progress",
+      "previousStatus": "Pending",
+      "newStatus": "In Progress",
+      "remark": "Status updated to In Progress",
+      "updatedBy": "Dr. S. Radhakrishnan (HOD)",
+      "actorRole": "HOD",
+      "createdAt": "2026-10-02T11:30:38.543Z"
+    },
+    {
+      "id": "LOG-1790940715365",
+      "complaintId": "CC-2026-0008",
+      "action": "Status changed to Resolved",
+      "previousStatus": "In Progress",
+      "newStatus": "Resolved",
+      "remark": "completed",
+      "updatedBy": "Dr. S. Radhakrishnan (HOD)",
+      "actorRole": "HOD",
+      "createdAt": "2026-10-02T11:31:55.365Z"
+    }
+  ],
+  "reportHistory": [
+    {
+      "id": "LOG-004",
+      "reportId": "CC-2026-0002",
+      "action": "Faculty Report Filed to HOD",
+      "remark": "Impacting student semester evaluations.",
+      "updatedBy": "Dr. Ananya Sen",
+      "actorRole": "FACULTY",
+      "createdAt": "2026-10-01T08:05:00.000Z"
+    },
+    {
+      "id": "LOG-005",
+      "reportId": "CC-2026-0002",
+      "action": "Assigned to IT AV Team",
+      "remark": "Target resolution before 3 PM today.",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-10-01T08:30:00.000Z"
+    },
+    {
+      "id": "LOG-010",
+      "reportId": "CC-2026-0005",
+      "action": "Faculty Report Filed to HOD",
+      "updatedBy": "Prof. Ramesh Kulkarni",
+      "actorRole": "FACULTY",
+      "createdAt": "2026-09-30T13:50:00.000Z"
+    },
+    {
+      "id": "LOG-011",
+      "reportId": "CC-2026-0005",
+      "action": "Assigned to Civil & Workshop Maintenance",
+      "updatedBy": "Dr. S. Radhakrishnan",
+      "actorRole": "HOD",
+      "createdAt": "2026-09-30T14:20:00.000Z"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "ASG-CC-2026-0001",
+      "complaintId": "CC-2026-0001",
+      "assignedTo": "Kumar Rajan",
+      "assignedTeam": "Electrical Maintenance Wing",
+      "assignedBy": "Dr. S. Radhakrishnan (HOD)",
+      "expectedCompletionDate": "2026-10-01T17:00:00.000Z",
+      "remarks": "Urgent electrical hazard. Breaker #14 tripped as safety precaution. Kumar Rajan deployed with heavy-duty switchboard replacement kit.",
+      "createdAt": "2026-09-30T10:15:00.000Z"
+    },
+    {
+      "id": "ASG-CC-2026-0002",
+      "reportId": "CC-2026-0002",
+      "assignedTo": "Vikram Mehta",
+      "assignedTeam": "Campus Wi-Fi & IT Networks",
+      "assignedBy": "Dr. S. Radhakrishnan (HOD)",
+      "expectedCompletionDate": "2026-10-01T15:00:00.000Z",
+      "remarks": "IT AV technician requested to install replacement projector lamp or deploy temporary mobile projector trolley.",
+      "createdAt": "2026-10-01T08:30:00.000Z"
+    },
+    {
+      "id": "ASG-CC-2026-0003",
+      "complaintId": "CC-2026-0003",
+      "assignedTo": "Santosh Mehra",
+      "assignedTeam": "Water Supply & Plumbing Cell",
+      "assignedBy": "Dr. S. Radhakrishnan (HOD)",
+      "expectedCompletionDate": "2026-09-29T14:00:00.000Z",
+      "remarks": "Main pipeline valve replaced and floor sanitized. Dry blower used on hallway floor.",
+      "createdAt": "2026-09-29T13:45:00.000Z"
+    },
+    {
+      "id": "ASG-CC-2026-0005",
+      "reportId": "CC-2026-0005",
+      "assignedTo": "Gopal Krishnan",
+      "assignedTeam": "Civil & Structural Maintenance",
+      "assignedBy": "Dr. S. Radhakrishnan (HOD)",
+      "expectedCompletionDate": "2026-10-02T12:00:00.000Z",
+      "remarks": "Blower belt tensioner replacement ordered from local distributor. Workshop classes temporarily shifted to Room M-10.",
+      "createdAt": "2026-09-30T14:20:00.000Z"
+    },
+    {
+      "id": "ASG-CC-2026-0007",
+      "complaintId": "CC-2026-0007",
+      "assignedTo": "Gopal Krishnan",
+      "assignedTeam": "Civil & Structural Maintenance",
+      "assignedBy": "Dr. S. Radhakrishnan (HOD)",
+      "expectedCompletionDate": "2026-10-01T18:00:00.000Z",
+      "remarks": "Temporary warning barricades installed immediately. Civil team epoxy-welding anchor base this afternoon.",
+      "createdAt": "2026-09-30T16:00:00.000Z"
+    }
+  ]
+}

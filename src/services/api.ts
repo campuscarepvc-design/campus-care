@@ -245,9 +245,9 @@ export const api = {
       // Fallback
     }
     return {
-      STUDENT: { id: 'STU1001', password: 'student@2026' },
-      FACULTY: { id: 'FAC1001', password: 'faculty@2026' },
-      HOD: { id: 'HOD1001', password: 'hod@admin2026' },
+      STUDENT: { id: 'STU1001', password: '' },
+      FACULTY: { id: 'FAC1001', password: '' },
+      HOD: { id: 'HOD1001', password: '' },
     };
   },
 

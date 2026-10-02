@@ -14,7 +14,7 @@ import {
   DbAssignment,
   DatabaseSchema,
 } from './schema';
-import { hashPasswordSync } from '../services/auth';
+import { hashPasswordSync, comparePasswordSync } from '../services/auth';
 import {
   DEMO_USERS,
   INITIAL_COMPLAINTS,
@@ -35,6 +35,7 @@ import {
 
 export interface IDatabase {
   // Users & Roles
+  synchronizeDemoAccountHashes(stateToSync?: DatabaseSchema): boolean;
   getUsers(): Promise<DbUser[]>;
   getUserById(id: string): Promise<DbUser | undefined>;
   getUserByEmail(email: string): Promise<DbUser | undefined>;
@@ -158,12 +159,60 @@ export class PersistentDatabase implements IDatabase {
       }
     }
 
-    this.dbPath =
-      filePath ||
-      process.env.DATABASE_FILE_PATH ||
-      defaultDbFile;
+    this.dbPath = isVercel
+      ? defaultDbFile
+      : (filePath || process.env.DATABASE_FILE_PATH || defaultDbFile);
 
     this.state = this.loadOrInitialize();
+  }
+
+  private getEnvPasswordForRole(role: UserRole): string | undefined {
+    if (role === 'STUDENT') return process.env.STUDENT_DEFAULT_PASSWORD;
+    if (role === 'FACULTY') return process.env.FACULTY_DEFAULT_PASSWORD;
+    if (role === 'HOD') return process.env.HOD_DEFAULT_PASSWORD;
+    return undefined;
+  }
+
+  public synchronizeDemoAccountHashes(stateToSync?: DatabaseSchema): boolean {
+    const targetState = stateToSync || this.state;
+    if (!targetState || !Array.isArray(targetState.users)) return false;
+
+    let modified = false;
+    const studentEnv = process.env.STUDENT_DEFAULT_PASSWORD;
+    const facultyEnv = process.env.FACULTY_DEFAULT_PASSWORD;
+    const hodEnv = process.env.HOD_DEFAULT_PASSWORD;
+
+    targetState.users.forEach((u: DbUser) => {
+      let targetEnvPwd: string | undefined;
+
+      if (u.role === 'STUDENT' && (u.id === 'STU1001' || u.id === 'STU-2024-101')) {
+        targetEnvPwd = studentEnv;
+      } else if (u.role === 'FACULTY' && (u.id === 'FAC1001' || u.id === 'FAC-CS-204')) {
+        targetEnvPwd = facultyEnv;
+      } else if (u.role === 'HOD' && (u.id === 'HOD1001' || u.id === 'HOD-ENG-001')) {
+        targetEnvPwd = hodEnv;
+      }
+
+      if (targetEnvPwd && targetEnvPwd.trim().length > 0) {
+        const cleanPwd = targetEnvPwd.trim();
+        const matchesCurrent = u.passwordHash
+          ? comparePasswordSync(cleanPwd, u.passwordHash)
+          : false;
+
+        if (!matchesCurrent) {
+          console.log(`[DB] Synchronizing demo account password hash for ${u.id} (${u.role}) from environment variable`);
+          u.passwordHash = hashPasswordSync(cleanPwd);
+          u.isActive = true;
+          u.mustChangePassword = false;
+          modified = true;
+        }
+      }
+    });
+
+    if (modified) {
+      this.persistSync(targetState);
+    }
+    return modified;
   }
 
   private matchesUser(targetId?: string, testId?: string): boolean {
@@ -188,6 +237,8 @@ export class PersistentDatabase implements IDatabase {
   }
 
   private loadOrInitialize(): DatabaseSchema {
+    let loadedState: DatabaseSchema | null = null;
+
     if (fs.existsSync(this.dbPath)) {
       try {
         const raw = fs.readFileSync(this.dbPath, 'utf-8');
@@ -198,40 +249,23 @@ export class PersistentDatabase implements IDatabase {
           Array.isArray(parsed.complaints)
         ) {
           console.log(`[DB] Successfully loaded persistent database from ${this.dbPath}`);
-          // Ensure all existing users have secure password hashes
-          let needsSave = false;
-          parsed.users.forEach((u: DbUser) => {
-            if (!u.passwordHash) {
-              const defaultPwd =
-                u.role === 'STUDENT'
-                  ? 'student@2026'
-                  : u.role === 'FACULTY'
-                  ? 'faculty@2026'
-                  : 'hod@admin2026';
-              u.passwordHash = hashPasswordSync(defaultPwd);
-              u.isActive = true;
-              u.mustChangePassword = true;
-              needsSave = true;
-            } else if (u.mustChangePassword === undefined) {
-              // Default seed accounts must change default password upon first login
-              u.mustChangePassword = true;
-              needsSave = true;
-            }
-          });
-          if (needsSave) {
-            this.persistSync(parsed);
-          }
-          return parsed;
+          loadedState = parsed;
         }
       } catch (err) {
         console.error('[DB] Error reading persistent database, reinitializing with seed data:', err);
       }
     }
 
-    console.log(`[DB] Initializing fresh persistent database with complete seed data at ${this.dbPath}`);
-    const seedState = this.generateSeedState();
-    this.persistSync(seedState);
-    return seedState;
+    if (!loadedState) {
+      console.log(`[DB] Initializing fresh persistent database with complete seed data at ${this.dbPath}`);
+      loadedState = this.generateSeedState();
+    }
+
+    // Safely synchronize demo accounts password hashes with current environment variables
+    this.synchronizeDemoAccountHashes(loadedState);
+
+    this.persistSync(loadedState);
+    return loadedState;
   }
 
   private persistSync(stateToSave?: DatabaseSchema) {
@@ -246,27 +280,24 @@ export class PersistentDatabase implements IDatabase {
   private generateSeedState(): DatabaseSchema {
     const now = new Date().toISOString();
 
-    const getDefaultPasswordForRole = (role: UserRole) => {
-      if (role === 'STUDENT') return 'student@2026';
-      if (role === 'FACULTY') return 'faculty@2026';
-      return 'hod@admin2026';
-    };
-
     // 1. Users
-    const users: DbUser[] = Object.values(DEMO_USERS).map((u) => ({
-      id: u.id,
-      name: u.name,
-      email: u.email,
-      role: u.role,
-      department: u.department,
-      avatarUrl: u.avatar,
-      phone: u.phone,
-      passwordHash: hashPasswordSync(getDefaultPasswordForRole(u.role)),
-      isActive: true,
-      mustChangePassword: true,
-      createdAt: now,
-      updatedAt: now,
-    }));
+    const users: DbUser[] = Object.values(DEMO_USERS).map((u) => {
+      const envPwd = this.getEnvPasswordForRole(u.role);
+      return {
+        id: u.id,
+        name: u.name,
+        email: u.email,
+        role: u.role,
+        department: u.department,
+        avatarUrl: u.avatar,
+        phone: u.phone,
+        passwordHash: envPwd ? hashPasswordSync(envPwd.trim()) : '',
+        isActive: true,
+        mustChangePassword: false,
+        createdAt: now,
+        updatedAt: now,
+      };
+    });
 
     // 2. Students
     const students: DbStudent[] = [

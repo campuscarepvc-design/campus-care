@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express, { Request, Response } from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
@@ -128,15 +131,15 @@ app.use((req, res, next) => {
     return res.json({
       STUDENT: {
         id: 'STU1001',
-        password: process.env.STUDENT_DEFAULT_PASSWORD || 'student@2026',
+        password: process.env.STUDENT_DEFAULT_PASSWORD || '',
       },
       FACULTY: {
         id: 'FAC1001',
-        password: process.env.FACULTY_DEFAULT_PASSWORD || 'faculty@2026',
+        password: process.env.FACULTY_DEFAULT_PASSWORD || '',
       },
       HOD: {
         id: 'HOD1001',
-        password: process.env.HOD_DEFAULT_PASSWORD || 'hod@admin2026',
+        password: process.env.HOD_DEFAULT_PASSWORD || '',
       },
     });
   });
@@ -190,16 +193,27 @@ app.use((req, res, next) => {
       isPasswordValid = await comparePassword(password, user.passwordHash);
     }
 
-    // Also support configured default password for demo accounts
+    // Also support configured environment variable for demo accounts & lazily sync hash
     if (!isPasswordValid) {
-      const configuredDefault =
+      const configuredEnvDefault =
         user.role === 'STUDENT'
-          ? (process.env.STUDENT_DEFAULT_PASSWORD || 'student@2026')
+          ? process.env.STUDENT_DEFAULT_PASSWORD
           : user.role === 'FACULTY'
-          ? (process.env.FACULTY_DEFAULT_PASSWORD || 'faculty@2026')
-          : (process.env.HOD_DEFAULT_PASSWORD || 'hod@admin2026');
-      if (password === configuredDefault) {
+          ? process.env.FACULTY_DEFAULT_PASSWORD
+          : user.role === 'HOD'
+          ? process.env.HOD_DEFAULT_PASSWORD
+          : undefined;
+
+      if (
+        configuredEnvDefault &&
+        configuredEnvDefault.trim().length > 0 &&
+        password === configuredEnvDefault.trim()
+      ) {
         isPasswordValid = true;
+        user.passwordHash = hashPasswordSync(configuredEnvDefault.trim());
+        user.isActive = true;
+        user.mustChangePassword = false;
+        await db.updateUserPassword(user.id, user.passwordHash, false);
       }
     }
 

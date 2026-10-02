@@ -27,6 +27,11 @@ export async function comparePassword(password: string, hash: string): Promise<b
   return bcrypt.compare(password, hash);
 }
 
+export function comparePasswordSync(password: string, hash: string): boolean {
+  if (!password || !hash) return false;
+  return bcrypt.compareSync(password, hash);
+}
+
 // Generate signed JWT token
 export function generateAuthToken(user: {
   id: string;

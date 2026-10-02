@@ -22,15 +22,15 @@ export const LandingLogin: React.FC = () => {
   const { login } = useAuth();
   const [selectedRole, setSelectedRole] = useState<UserRole>('STUDENT');
   const [idInput, setIdInput] = useState('STU1001');
-  const [passwordInput, setPasswordInput] = useState('student@2026');
+  const [passwordInput, setPasswordInput] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
 
   const [demoAccounts, setDemoAccounts] = useState<Record<string, { id: string; password: string }>>({
-    STUDENT: { id: 'STU1001', password: 'student@2026' },
-    FACULTY: { id: 'FAC1001', password: 'faculty@2026' },
-    HOD: { id: 'HOD1001', password: 'hod@admin2026' },
+    STUDENT: { id: 'STU1001', password: '' },
+    FACULTY: { id: 'FAC1001', password: '' },
+    HOD: { id: 'HOD1001', password: '' },
   });
 
   // Sync configured demo credentials from server
@@ -40,8 +40,9 @@ export const LandingLogin: React.FC = () => {
       .then((creds) => {
         if (isMounted && creds) {
           setDemoAccounts(creds);
-          // If passwordInput is still the initial default, sync with server's configured student password
-          setPasswordInput((prev) => (prev === 'student@2026' && creds.STUDENT?.password ? creds.STUDENT.password : prev));
+          if (creds.STUDENT?.password) {
+            setPasswordInput(creds.STUDENT.password);
+          }
         }
       })
       .catch(() => {});
@@ -56,18 +57,16 @@ export const LandingLogin: React.FC = () => {
     const cred = demoAccounts[role];
     if (cred) {
       setIdInput(cred.id);
-      setPasswordInput(cred.password);
+      setPasswordInput(cred.password || '');
     } else {
       if (role === 'STUDENT') {
         setIdInput('STU1001');
-        setPasswordInput('student@2026');
       } else if (role === 'FACULTY') {
         setIdInput('FAC1001');
-        setPasswordInput('faculty@2026');
       } else {
         setIdInput('HOD1001');
-        setPasswordInput('hod@admin2026');
       }
+      setPasswordInput('');
     }
   };
 
